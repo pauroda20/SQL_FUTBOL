@@ -1,0 +1,674 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 22-04-2021 a las 16:49:41
+-- Versión del servidor: 8.0.23-0ubuntu0.20.04.1
+-- Versión de PHP: 7.2.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `futbol_11`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `class`
+--
+
+CREATE TABLE `class` (
+  `cod` char(3) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `t_punts` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de punts',
+  `t_jug` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de jugats',
+  `t_gua` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de guanyats',
+  `t_emp` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total d''empatats',
+  `t_per` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de perduts',
+  `t_fav` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de gols a favor',
+  `t_con` tinyint UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total de gols en contra',
+  `c_punts` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_jug` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_gua` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_emp` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_per` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_fav` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `c_con` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_punts` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_jug` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_gua` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_emp` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_per` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_fav` tinyint UNSIGNED NOT NULL DEFAULT '0',
+  `f_con` tinyint UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `class`
+--
+
+INSERT INTO `class` (`cod`, `t_punts`, `t_jug`, `t_gua`, `t_emp`, `t_per`, `t_fav`, `t_con`, `c_punts`, `c_jug`, `c_gua`, `c_emp`, `c_per`, `c_fav`, `c_con`, `f_punts`, `f_jug`, `f_gua`, `f_emp`, `f_per`, `f_fav`, `f_con`) VALUES
+('ALM', 30, 38, 17, 12, 9, 58, 48, 0, 19, 3, 10, 6, 23, 35, 0, 19, 14, 2, 3, 35, 13),
+('ATH', 58, 38, 22, 4, 12, 67, 47, 0, 19, 12, 1, 6, 32, 20, 0, 19, 10, 3, 6, 35, 27),
+('ATM', 58, 38, 18, 7, 13, 68, 47, 0, 19, 10, 3, 6, 35, 20, 0, 19, 8, 4, 7, 33, 27),
+('BAR', 96, 38, 17, 6, 15, 57, 59, 0, 19, 16, 2, 1, 46, 10, 0, 19, 1, 4, 14, 11, 49),
+('DEP', 43, 38, 18, 13, 7, 50, 28, 0, 19, 8, 6, 5, 22, 19, 0, 19, 10, 7, 2, 28, 9),
+('ESP', 49, 38, 24, 4, 10, 66, 35, 0, 19, 11, 2, 6, 33, 22, 0, 19, 13, 2, 4, 33, 13),
+('GET', 44, 38, 20, 8, 10, 67, 42, 0, 19, 9, 3, 7, 33, 26, 0, 19, 11, 5, 3, 34, 16),
+('HER', 35, 38, 21, 8, 9, 60, 36, 0, 19, 7, 5, 7, 27, 27, 0, 19, 14, 3, 2, 33, 9),
+('LEV', 45, 38, 20, 9, 9, 57, 36, 0, 19, 9, 4, 6, 25, 20, 0, 19, 11, 5, 3, 32, 16),
+('MAD', 92, 38, 18, 5, 15, 82, 53, 0, 19, 16, 1, 2, 61, 12, 0, 19, 2, 4, 13, 21, 41),
+('MAL', 46, 38, 16, 7, 15, 68, 54, 0, 19, 7, 3, 9, 29, 29, 0, 19, 9, 4, 6, 39, 25),
+('MLL', 44, 38, 21, 8, 9, 62, 35, 0, 19, 9, 4, 6, 25, 19, 0, 19, 12, 4, 3, 37, 16),
+('OSA', 47, 38, 24, 8, 6, 60, 31, 0, 19, 10, 6, 3, 28, 14, 0, 19, 14, 2, 3, 32, 17),
+('RAC', 46, 38, 19, 10, 9, 60, 37, 0, 19, 8, 6, 5, 25, 21, 0, 19, 11, 4, 4, 35, 16),
+('RSO', 45, 38, 26, 3, 9, 72, 43, 0, 19, 11, 2, 6, 27, 21, 0, 19, 15, 1, 3, 45, 22),
+('SAR', 45, 38, 19, 9, 10, 52, 41, 0, 19, 9, 3, 7, 26, 27, 0, 19, 10, 6, 3, 26, 14),
+('SEV', 58, 38, 19, 7, 12, 69, 54, 0, 19, 10, 4, 5, 35, 27, 0, 19, 9, 3, 7, 34, 27),
+('SPO', 47, 38, 18, 14, 6, 49, 28, 0, 19, 9, 6, 4, 23, 16, 0, 19, 9, 8, 2, 26, 12),
+('VAL', 71, 38, 15, 8, 15, 57, 51, 0, 19, 10, 5, 4, 34, 21, 0, 19, 5, 3, 11, 23, 30),
+('VIL', 62, 38, 22, 8, 8, 63, 35, 0, 19, 13, 3, 3, 33, 14, 0, 19, 9, 5, 5, 30, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `equips`
+--
+
+CREATE TABLE `equips` (
+  `cod` char(3) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `nom` varchar(20) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `nom_c` varchar(35) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `estadi` varchar(30) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `equips`
+--
+
+INSERT INTO `equips` (`cod`, `nom`, `nom_c`, `estadi`) VALUES
+('ALM', 'Almeria', 'U.D. ALMERIA SAD', 'Juegos del Mediterráneo'),
+('ATH', 'Athletic de Bilbao', 'ATHLETIC CLUB', 'San Mamés'),
+('ATM', 'At. Madrid', 'CLUB ATLETICO DE MADRID, SAD', 'Vicente Calderón'),
+('BAR', 'Barcelona', 'F.C. BARCELONA', 'Camp Nou'),
+('DEP', 'Depor', 'R.C. DEPORTIVO DE LA CORUÑA, SAD', 'Riazor'),
+('ESP', 'Espanyol ', 'R.C.D. ESPANYOL DE BARCELONA, SAD', 'Cornellà-El Prat'),
+('GET', 'Getafe', 'GETAFE C.F. SAD', 'Coliseum Alfonso Pérez'),
+('HER', 'Hèrcules', 'HERCULES C.F. SAD', 'José Rico Pérez'),
+('LEV', 'Llevant', 'LEVANTE U.D.,SAD', 'Ciutat de Valencia'),
+('MAD', 'Real Madrid', 'REAL MADRID C.F.', 'Santiago Bernabéu'),
+('MAL', 'Màlaga', 'MALAGA C.F., SAD', 'La Rosaleda'),
+('MLL', 'Mallorca', 'R.C.D. MALLORCA, SAD', 'Iberostar'),
+('OSA', 'Osasuna', 'C. ATº. OSASUNA', 'Reyno de Navarra'),
+('RAC', 'Ràcing de Santander', 'REAL RACING CLUB, SAD', 'Campos de Sport El Sardinero'),
+('RSO', 'Reial Societat', 'REAL SOCIEDAD DE FUTBOL, SAD', 'Anoeta'),
+('SAR', 'Saragossa', 'REAL ZARAGOZA, SAD', 'La Romareda'),
+('SEV', 'Sevilla', 'SEVILLA F.C., SAD', 'Ramón Sánchez Pizjuán'),
+('SPO', 'Sporting de Xixon', 'REAL SPORTING DE GIJON, SAD', 'El Molinón'),
+('VAL', 'València', 'VALENCIA C.F., SAD', 'Mestalla'),
+('VIL', 'Vila-real', 'VILLARREAL C.F., SAD', 'El Madrigal');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `jornades`
+--
+
+CREATE TABLE `jornades` (
+  `num` tinyint UNSIGNED NOT NULL,
+  `data` date NOT NULL,
+  `volta` enum('1','2') CHARACTER SET latin1 COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `jornades`
+--
+
+INSERT INTO `jornades` (`num`, `data`, `volta`) VALUES
+(1, '2010-08-28', NULL),
+(2, '2010-09-11', NULL),
+(3, '2010-09-18', NULL),
+(4, '2010-09-21', NULL),
+(5, '2010-09-25', NULL),
+(6, '2010-10-02', NULL),
+(7, '2010-10-16', NULL),
+(8, '2010-10-23', NULL),
+(9, '2010-10-30', NULL),
+(10, '2010-11-06', NULL),
+(11, '2010-11-13', NULL),
+(12, '2010-11-20', NULL),
+(13, '2010-11-27', NULL),
+(14, '2010-12-04', NULL),
+(15, '2010-12-11', NULL),
+(16, '2010-12-18', NULL),
+(17, '2011-01-02', NULL),
+(18, '2011-01-08', NULL),
+(19, '2011-01-15', NULL),
+(20, '2011-01-22', NULL),
+(21, '2011-01-29', NULL),
+(22, '2011-02-05', NULL),
+(23, '2011-02-12', NULL),
+(24, '2011-02-19', NULL),
+(25, '2011-02-27', NULL),
+(26, '2011-03-02', NULL),
+(27, '2011-03-06', NULL),
+(28, '2011-03-13', NULL),
+(29, '2011-03-20', NULL),
+(30, '2011-04-03', NULL),
+(31, '2011-04-10', NULL),
+(32, '2011-04-17', NULL),
+(33, '2011-04-24', NULL),
+(34, '2011-05-01', NULL),
+(35, '2011-05-08', NULL),
+(36, '2011-05-11', NULL),
+(37, '2011-05-15', NULL),
+(38, '2011-05-22', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `partits`
+--
+
+CREATE TABLE `partits` (
+  `j_num` tinyint UNSIGNED NOT NULL,
+  `e_local` char(3) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `e_vis` char(3) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `datahora` datetime NOT NULL,
+  `g_local` tinyint UNSIGNED NOT NULL,
+  `g_vis` tinyint UNSIGNED NOT NULL,
+  `tv` varchar(50) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `partits`
+--
+
+INSERT INTO `partits` (`j_num`, `e_local`, `e_vis`, `datahora`, `g_local`, `g_vis`, `tv`) VALUES
+(1, 'ATM', 'SPO', '2010-08-29 22:00:00', 4, 0, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(1, 'DEP', 'SAR', '2010-08-29 17:00:00', 0, 0, 'Taquilla 5'),
+(1, 'ESP', 'GET', '2010-08-30 17:00:00', 3, 1, 'Taquilla 6'),
+(1, 'HER', 'ATH', '2010-08-28 18:00:00', 0, 1, 'Gol T / C+ Liga'),
+(1, 'LEV', 'SEV', '2010-08-28 22:00:00', 1, 4, 'Gol T / Taquilla 4'),
+(1, 'MAL', 'VAL', '2010-08-28 20:00:00', 1, 3, 'Gol T / C+ Liga'),
+(1, 'MLL', 'MAD', '2010-08-29 21:00:00', 0, 0, 'Canal+'),
+(1, 'OSA', 'ALM', '2010-08-29 17:00:00', 0, 0, 'Taquilla 8'),
+(1, 'RAC', 'BAR', '2010-08-29 19:00:00', 0, 3, 'Gol T / C+ Liga'),
+(1, 'RSO', 'VIL', '2010-08-29 17:00:00', 1, 0, 'Taquilla 7'),
+(2, 'ALM', 'RSO', '2010-09-13 21:00:00', 2, 2, 'Gol T / Taquilla 5'),
+(2, 'ATH', 'ATM', '2010-09-11 22:00:00', 1, 2, 'laSexta / TM / TPA7 / El 33 / IB3'),
+(2, 'BAR', 'HER', '2010-09-11 18:00:00', 0, 2, 'Gol T / C+ Liga'),
+(2, 'GET', 'LEV', '2010-09-12 17:00:00', 4, 1, 'Taquilla 7'),
+(2, 'MAD', 'OSA', '2010-09-11 20:00:00', 1, 0, 'Gol T / C+ Liga'),
+(2, 'SAR', 'MAL', '2010-09-12 17:00:00', 3, 5, 'Taquilla 6'),
+(2, 'SEV', 'DEP', '2010-09-12 21:00:00', 0, 0, 'Canal+'),
+(2, 'SPO', 'MLL', '2010-09-12 17:00:00', 2, 0, 'Taquilla 5'),
+(2, 'VAL', 'RAC', '2010-09-11 18:00:00', 1, 0, 'Taquilla 5'),
+(2, 'VIL', 'ESP', '2010-09-12 19:00:00', 4, 0, 'Gol T / C+ Liga'),
+(3, 'ATM', 'BAR', '2010-09-19 19:00:00', 1, 2, 'Gol T / C+ Liga'),
+(3, 'DEP', 'GET', '2010-09-20 21:00:00', 2, 2, 'Gol T / Taquilla 7'),
+(3, 'ESP', 'ALM', '2010-09-18 18:00:00', 1, 0, 'Taquilla 7'),
+(3, 'HER', 'VAL', '2010-09-19 17:00:00', 1, 2, 'Taquilla 5'),
+(3, 'LEV', 'VIL', '2010-09-19 17:00:00', 1, 2, 'Taquilla 7'),
+(3, 'MAL', 'SEV', '2010-09-19 21:00:00', 1, 2, 'Canal+'),
+(3, 'MLL', 'OSA', '2010-09-18 18:00:00', 2, 0, 'Gol T / C+ Liga'),
+(3, 'RAC', 'SAR', '2010-09-19 17:00:00', 2, 0, 'Taquilla 6'),
+(3, 'RSO', 'MAD', '2010-09-18 22:00:00', 1, 2, 'laSexta / TM / TPA7 / C9 / IB3 / TV3'),
+(3, 'SPO', 'ATH', '2010-09-18 20:00:00', 2, 2, 'Gol T / C+ Liga'),
+(4, 'ALM', 'LEV', '2010-09-22 20:00:00', 0, 1, 'Taquilla 6'),
+(4, 'ATH', 'MLL', '2010-09-21 20:00:00', 3, 0, 'Taquilla 5'),
+(4, 'BAR', 'SPO', '2010-09-22 20:00:00', 1, 0, 'Canal+'),
+(4, 'GET', 'MAL', '2010-09-23 20:00:00', 0, 2, 'Taquilla 6'),
+(4, 'MAD', 'ESP', '2010-09-21 22:00:00', 3, 0, 'Gol T / C+ Liga'),
+(4, 'OSA', 'RSO', '2010-09-21 20:00:00', 3, 1, 'Taquilla 6'),
+(4, 'SAR', 'HER', '2010-09-22 20:00:00', 0, 0, 'Taquilla 5'),
+(4, 'SEV', 'RAC', '2010-09-23 22:00:00', 1, 1, 'Gol T / C+ Liga'),
+(4, 'VAL', 'ATM', '2010-09-22 22:00:00', 1, 1, 'laSexta / C9 / TM / IB3 / TV3 / TPA7'),
+(4, 'VIL', 'DEP', '2010-09-23 20:00:00', 1, 0, 'Gol T / C+ Liga'),
+(5, 'ATH', 'BAR', '2010-09-25 22:00:00', 1, 3, 'laSexta / TV3 / TPA7 / C9 / IB3 / TM'),
+(5, 'ATM', 'SAR', '2010-09-26 21:00:00', 1, 0, 'Canal+'),
+(5, 'DEP', 'ALM', '2010-09-26 17:00:00', 0, 2, 'Taquilla 6'),
+(5, 'ESP', 'OSA', '2010-09-26 17:00:00', 1, 0, 'Taquilla 7'),
+(5, 'HER', 'SEV', '2010-09-26 19:00:00', 2, 0, 'Gol T / C+ Liga'),
+(5, 'LEV', 'MAD', '2010-09-25 20:00:00', 0, 0, 'Gol T / C+ Liga'),
+(5, 'MAL', 'VIL', '2010-09-27 21:00:00', 2, 3, 'Gol T / Taquilla 7'),
+(5, 'MLL', 'RSO', '2010-09-26 17:00:00', 2, 0, 'Taquilla 8'),
+(5, 'RAC', 'GET', '2010-09-26 17:00:00', 0, 1, 'Taquilla 5'),
+(5, 'SPO', 'VAL', '2010-09-25 18:00:00', 0, 2, 'Gol T / C+ Liga'),
+(6, 'ALM', 'MAL', '2010-10-03 17:00:00', 1, 1, 'Taquilla 7'),
+(6, 'BAR', 'MLL', '2010-10-03 19:00:00', 1, 1, 'Gol T / C+ Liga'),
+(6, 'GET', 'HER', '2010-10-03 17:00:00', 3, 0, 'Taquilla 5'),
+(6, 'MAD', 'DEP', '2010-10-03 21:00:00', 6, 1, 'Canal+'),
+(6, 'OSA', 'LEV', '2010-10-03 17:00:00', 1, 1, 'Taquilla 8'),
+(6, 'RSO', 'ESP', '2010-10-02 20:00:00', 1, 0, 'Gol T / C+ Liga'),
+(6, 'SAR', 'SPO', '2010-10-02 18:00:00', 2, 2, 'Gol T / C+ Liga'),
+(6, 'SEV', 'ATM', '2010-10-03 17:00:00', 3, 1, 'Gol T / Taquilla 4'),
+(6, 'VAL', 'ATH', '2010-10-02 22:00:00', 2, 1, 'laSexta / C9 / TPA7 / IB3 / TV3 / TM'),
+(6, 'VIL', 'RAC', '2010-10-03 17:00:00', 2, 0, 'Taquilla 6'),
+(7, 'ATH', 'SAR', '2010-10-17 19:00:00', 2, 1, 'Gol T / C+ Liga'),
+(7, 'ATM', 'GET', '2010-10-16 18:00:00', 2, 0, 'Gol T / C+ Liga'),
+(7, 'BAR', 'VAL', '2010-10-16 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(7, 'DEP', 'OSA', '2010-10-17 17:00:00', 0, 0, 'Taquilla 6'),
+(7, 'HER', 'VIL', '2010-10-18 21:00:00', 2, 2, 'Gol T / Taquilla 8'),
+(7, 'LEV', 'RSO', '2010-10-17 17:00:00', 2, 1, 'Taquilla 7'),
+(7, 'MAL', 'MAD', '2010-10-16 22:00:00', 1, 4, 'laSexta / TM / TV3 / C9 / IB3 / TPA7'),
+(7, 'MLL', 'ESP', '2010-10-17 17:00:00', 0, 1, 'Taquilla 8'),
+(7, 'RAC', 'ALM', '2010-10-17 17:00:00', 1, 0, 'Taquilla 5'),
+(7, 'SPO', 'SEV', '2010-10-17 21:00:00', 2, 0, 'Canal+'),
+(8, 'ALM', 'HER', '2010-10-24 17:00:00', 1, 1, 'Taquilla 6'),
+(8, 'ESP', 'LEV', '2010-10-24 17:00:00', 2, 1, 'Taquilla 8'),
+(8, 'GET', 'SPO', '2010-10-24 17:00:00', 3, 0, 'Taquilla 5'),
+(8, 'MAD', 'RAC', '2010-10-23 20:00:00', 6, 1, 'Gol T / C+ Liga'),
+(8, 'OSA', 'MAL', '2010-10-24 17:00:00', 3, 0, 'Taquilla 7'),
+(8, 'RSO', 'DEP', '2010-10-25 21:00:00', 3, 0, 'Gol T / Taquilla 7'),
+(8, 'SAR', 'BAR', '2010-10-23 18:00:00', 0, 2, 'Gol T / C+ Liga'),
+(8, 'SEV', 'ATH', '2010-10-24 19:00:00', 4, 3, 'Gol T / C+ Liga'),
+(8, 'VAL', 'MLL', '2010-10-23 22:00:00', 1, 2, 'laSexta / C9 / IB3 / TV3 / TM / TPA7'),
+(8, 'VIL', 'ATM', '2010-10-24 21:00:00', 2, 0, 'Canal+'),
+(9, 'ATH', 'GET', '2010-10-31 21:00:00', 3, 0, 'Canal+'),
+(9, 'ATM', 'ALM', '2010-10-31 19:00:00', 1, 1, 'Gol T / C+ Liga'),
+(9, 'BAR', 'SEV', '2010-10-30 22:00:00', 5, 0, 'laSexta / TV3 / C9 / IB3 / TM / TPA7'),
+(9, 'DEP', 'ESP', '2010-10-31 17:00:00', 3, 0, 'Taquilla 8'),
+(9, 'HER', 'MAD', '2010-10-30 20:00:00', 1, 3, 'Gol T / C+ Liga'),
+(9, 'MAL', 'RSO', '2010-10-31 17:00:00', 1, 2, 'Taquilla 7'),
+(9, 'MLL', 'LEV', '2010-11-01 21:00:00', 2, 1, 'Gol T / Taquilla 7'),
+(9, 'RAC', 'OSA', '2010-10-31 17:00:00', 4, 1, 'Taquilla 6'),
+(9, 'SPO', 'VIL', '2010-10-31 17:00:00', 1, 1, 'Taquilla 5'),
+(9, 'VAL', 'SAR', '2010-10-30 18:00:00', 1, 1, 'Gol T / C+ Liga'),
+(10, 'ALM', 'SPO', '2010-11-07 17:00:00', 1, 1, 'Taquilla 6'),
+(10, 'ESP', 'MAL', '2010-11-06 22:00:00', 1, 0, 'Gol T / C+ Liga'),
+(10, 'GET', 'BAR', '2010-11-07 19:00:00', 1, 3, 'Gol T / C+ Liga'),
+(10, 'LEV', 'DEP', '2010-11-07 17:00:00', 1, 2, 'Taquilla 8'),
+(10, 'MAD', 'ATM', '2010-11-07 21:00:00', 2, 0, 'Canal+'),
+(10, 'OSA', 'HER', '2010-11-07 17:00:00', 3, 0, 'Taquilla 7'),
+(10, 'RSO', 'RAC', '2010-11-06 20:00:00', 1, 0, 'Gol T / C+ Liga'),
+(10, 'SAR', 'MLL', '2010-11-07 17:00:00', 3, 2, 'Taquilla 4'),
+(10, 'SEV', 'VAL', '2010-11-08 21:30:00', 2, 0, 'laSexta / C9 / TV3 / IB3 / TM / TPA7'),
+(10, 'VIL', 'ATH', '2010-11-07 17:00:00', 4, 1, 'Gol T / Taquilla 5'),
+(11, 'ATH', 'ALM', '2010-11-13 18:00:00', 1, 0, 'Gol T / C+ Liga'),
+(11, 'ATM', 'OSA', '2010-11-13 20:00:00', 3, 0, 'Gol T / C+ Liga'),
+(11, 'BAR', 'VIL', '2010-11-13 22:00:00', 3, 1, 'laSexta / TV3 / C9 / IB3 / TM / TPA7'),
+(11, 'HER', 'RSO', '2010-11-14 17:00:00', 2, 1, 'Taquilla 5'),
+(11, 'MAL', 'LEV', '2010-11-14 17:00:00', 1, 0, 'Taquilla 7'),
+(11, 'MLL', 'DEP', '2010-11-14 17:00:00', 0, 0, 'Taquilla 8'),
+(11, 'RAC', 'ESP', '2010-11-14 17:00:00', 0, 0, 'Taquilla 6'),
+(11, 'SAR', 'SEV', '2010-11-14 17:00:00', 1, 2, 'Gol T / Taquilla 4'),
+(11, 'SPO', 'MAD', '2010-11-14 19:00:00', 0, 1, 'Gol T / C+ Liga'),
+(11, 'VAL', 'GET', '2010-11-14 21:00:00', 2, 0, 'Canal+'),
+(12, 'ALM', 'BAR', '2010-11-20 20:00:00', 0, 8, 'Gol T / C+ Liga'),
+(12, 'DEP', 'MAL', '2010-11-21 17:00:00', 3, 0, 'Taquilla 8'),
+(12, 'ESP', 'HER', '2010-11-21 17:00:00', 3, 0, 'Taquilla 6'),
+(12, 'GET', 'SAR', '2010-11-22 21:00:00', 1, 1, 'Gol T / Taquilla 7'),
+(12, 'LEV', 'RAC', '2010-11-21 17:00:00', 3, 1, 'Taquilla 7'),
+(12, 'MAD', 'ATH', '2010-11-20 22:00:00', 5, 1, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(12, 'OSA', 'SPO', '2010-11-21 17:00:00', 1, 0, 'Taquilla 5'),
+(12, 'RSO', 'ATM', '2010-11-21 21:00:00', 2, 4, 'Canal+'),
+(12, 'SEV', 'MLL', '2010-11-21 19:00:00', 1, 2, 'Gol T / C+ Liga'),
+(12, 'VIL', 'VAL', '2010-11-20 18:00:00', 1, 1, 'Gol T / C+ Liga'),
+(13, 'ATH', 'OSA', '2010-11-28 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(13, 'ATM', 'ESP', '2010-11-27 22:00:00', 2, 3, 'laSexta / TM / TV3 / IB3 / TPA7'),
+(13, 'BAR', 'MAD', '2010-11-29 21:00:00', 5, 0, 'Gol T / C+ Liga'),
+(13, 'HER', 'LEV', '2010-11-28 17:00:00', 3, 1, 'Taquilla 6'),
+(13, 'MLL', 'MAL', '2010-11-28 17:00:00', 2, 0, 'Taquilla 8'),
+(13, 'RAC', 'DEP', '2010-11-28 17:00:00', 1, 0, 'Taquilla 7'),
+(13, 'SAR', 'VIL', '2010-11-27 18:00:00', 0, 3, 'Gol T / Taquilla 8'),
+(13, 'SEV', 'GET', '2010-11-27 20:00:00', 1, 3, 'Gol T / C+ Liga'),
+(13, 'SPO', 'RSO', '2010-11-28 17:00:00', 1, 3, 'Taquilla 5'),
+(13, 'VAL', 'ALM', '2010-11-28 21:00:00', 2, 1, 'Canal+'),
+(14, 'ALM', 'SAR', '2010-12-05 17:00:00', 1, 1, 'Taquilla 6'),
+(14, 'DEP', 'HER', '2010-12-06 21:00:00', 1, 0, 'Gol T / Taquilla 8'),
+(14, 'ESP', 'SPO', '2010-12-05 17:00:00', 1, 0, 'Taquilla 7'),
+(14, 'GET', 'MLL', '2010-12-05 17:00:00', 3, 0, 'Taquilla 5'),
+(14, 'LEV', 'ATM', '2010-12-04 18:00:00', 2, 0, 'Gol T / C+ Liga'),
+(14, 'MAD', 'VAL', '2010-12-04 22:00:00', 2, 0, 'laSexta / TM / IB3 / TV3 / TPA7'),
+(14, 'MAL', 'RAC', '2010-12-05 17:00:00', 4, 1, 'Taquilla 8'),
+(14, 'OSA', 'BAR', '2010-12-04 20:45:00', 0, 3, 'Gol T / C+ Liga'),
+(14, 'RSO', 'ATH', '2010-12-05 21:00:00', 2, 0, 'Canal+'),
+(14, 'VIL', 'SEV', '2010-12-05 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(15, 'ATH', 'ESP', '2010-12-12 17:00:00', 2, 1, 'Taquilla 8'),
+(15, 'ATM', 'DEP', '2010-12-11 22:00:00', 2, 0, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(15, 'BAR', 'RSO', '2010-12-12 21:00:00', 5, 0, 'Canal+'),
+(15, 'GET', 'VIL', '2010-12-11 18:00:00', 1, 0, 'Gol T / C+ Liga'),
+(15, 'HER', 'MAL', '2010-12-12 17:00:00', 4, 1, 'Taquilla 6'),
+(15, 'MLL', 'RAC', '2010-12-12 17:00:00', 0, 1, 'Taquilla 7'),
+(15, 'SAR', 'MAD', '2010-12-12 19:00:00', 1, 3, 'Gol T / C+ Liga'),
+(15, 'SEV', 'ALM', '2010-12-11 20:00:00', 1, 3, 'Gol T / C+ Liga'),
+(15, 'SPO', 'LEV', '2010-12-12 17:00:00', 1, 1, 'Taquilla 5'),
+(15, 'VAL', 'OSA', '2010-12-13 21:00:00', 3, 3, 'Gol T / Taquilla 8'),
+(16, 'ALM', 'GET', '2010-12-19 17:00:00', 2, 3, 'Taquilla 7'),
+(16, 'DEP', 'SPO', '2010-12-18 18:00:00', 1, 1, 'Taquilla 8'),
+(16, 'ESP', 'BAR', '2010-12-18 20:00:00', 1, 5, 'Gol T / C+ Liga'),
+(16, 'LEV', 'ATH', '2010-12-18 18:00:00', 1, 2, 'Taquilla 7'),
+(16, 'MAD', 'SEV', '2010-12-19 21:00:00', 1, 0, 'Canal+'),
+(16, 'MAL', 'ATM', '2010-12-19 19:00:00', 0, 3, 'Gol T / C+ Liga'),
+(16, 'OSA', 'SAR', '2010-12-19 17:00:00', 0, 0, 'Taquilla 8'),
+(16, 'RAC', 'HER', '2010-12-20 21:00:00', 0, 0, 'Gol T / Taquilla 8'),
+(16, 'RSO', 'VAL', '2010-12-18 22:00:00', 1, 2, 'laSexta / IB3 / TV3 / TM / TPA7'),
+(16, 'VIL', 'MLL', '2010-12-18 18:00:00', 3, 1, 'Gol T / C+ Liga'),
+(17, 'ATH', 'DEP', '2011-01-02 16:00:00', 1, 2, 'Gol T / C+ Liga'),
+(17, 'ATM', 'RAC', '2011-01-03 20:00:00', 0, 0, 'Canal+'),
+(17, 'BAR', 'LEV', '2011-01-02 18:00:00', 2, 1, 'Gol T / C+ Liga'),
+(17, 'GET', 'MAD', '2011-01-03 22:00:00', 2, 3, 'Gol T / C+ Liga'),
+(17, 'MLL', 'HER', '2011-01-03 20:00:00', 3, 0, 'Taquilla 7'),
+(17, 'SAR', 'RSO', '2011-01-03 20:00:00', 2, 1, 'Taquilla 6'),
+(17, 'SEV', 'OSA', '2011-01-02 20:00:00', 1, 0, 'Gol T / Taquilla 7'),
+(17, 'SPO', 'MAL', '2011-01-02 18:00:00', 1, 2, 'Taquilla 6'),
+(17, 'VAL', 'ESP', '2011-01-02 22:00:00', 2, 1, 'laSexta / TV3 / IB3 / TM / TPA7'),
+(17, 'VIL', 'ALM', '2011-01-03 20:00:00', 2, 0, 'Taquilla 5'),
+(18, 'DEP', 'BAR', '2011-01-08 22:00:00', 0, 4, 'laSexta / TV3 / IB3 / TM / TPA7'),
+(18, 'ESP', 'SAR', '2011-01-09 17:00:00', 4, 0, 'Taquilla 7'),
+(18, 'HER', 'ATM', '2011-01-10 21:00:00', 4, 1, 'Gol T / Taquilla 8'),
+(18, 'LEV', 'VAL', '2011-01-09 21:00:00', 0, 1, 'Canal+'),
+(18, 'MAD', 'VIL', '2011-01-09 19:00:00', 4, 2, 'Gol T / C+ Liga'),
+(18, 'MAL', 'ATH', '2011-01-08 18:00:00', 1, 1, 'Gol T / C+ Liga'),
+(18, 'MLL', 'ALM', '2011-01-09 17:00:00', 4, 1, 'Taquilla 5'),
+(18, 'OSA', 'GET', '2011-01-09 17:00:00', 0, 0, 'Taquilla 6'),
+(18, 'RAC', 'SPO', '2011-01-09 17:00:00', 1, 1, 'Taquilla 8'),
+(18, 'RSO', 'SEV', '2011-01-08 20:00:00', 2, 3, 'Gol T / C+ Liga'),
+(19, 'ALM', 'MAD', '2011-01-16 19:00:00', 1, 1, 'Gol T / C+ Liga'),
+(19, 'ATH', 'RAC', '2011-01-15 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(19, 'ATM', 'MLL', '2011-01-17 21:00:00', 3, 0, 'Gol T / Taquilla 8'),
+(19, 'BAR', 'MAL', '2011-01-16 21:00:00', 4, 1, 'Canal+'),
+(19, 'GET', 'RSO', '2011-01-15 18:00:00', 0, 4, 'Taquilla 6'),
+(19, 'SAR', 'LEV', '2011-01-15 18:00:00', 1, 0, 'Taquilla 7'),
+(19, 'SEV', 'ESP', '2011-01-15 22:00:00', 1, 2, 'laSexta / TV3 / TM / IB3 / TPA7'),
+(19, 'SPO', 'HER', '2011-01-15 18:00:00', 2, 0, 'Taquilla 8'),
+(19, 'VAL', 'DEP', '2011-01-16 17:00:00', 2, 0, 'Gol T / C+ Liga'),
+(19, 'VIL', 'OSA', '2011-01-15 18:00:00', 4, 2, 'Taquilla 5'),
+(20, 'ALM', 'OSA', '2011-01-23 17:00:00', 3, 2, 'Taquilla 8'),
+(20, 'ATH', 'HER', '2011-01-24 21:00:00', 3, 0, 'Gol T / Taquilla 8'),
+(20, 'BAR', 'RAC', '2011-01-22 20:00:00', 3, 0, 'Gol T / C+ Liga'),
+(20, 'GET', 'ESP', '2011-01-23 17:00:00', 1, 3, 'Taquilla 7'),
+(20, 'MAD', 'MLL', '2011-01-23 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(20, 'SAR', 'DEP', '2011-01-23 17:00:00', 1, 0, 'Taquilla 6'),
+(20, 'SEV', 'LEV', '2011-01-22 18:00:00', 4, 1, 'Gol T / C+ Liga'),
+(20, 'SPO', 'ATM', '2011-01-23 17:00:00', 1, 0, 'Taquilla 5'),
+(20, 'VAL', 'MAL', '2011-01-22 22:00:00', 4, 3, 'laSexta / IB3 / TM / TV3 / TPA7'),
+(20, 'VIL', 'RSO', '2011-01-23 21:00:00', 2, 1, 'Canal+'),
+(21, 'ATM', 'ATH', '2011-01-30 17:00:00', 0, 2, 'Gol T / C+ Liga'),
+(21, 'DEP', 'SEV', '2011-01-29 22:00:00', 3, 3, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(21, 'ESP', 'VIL', '2011-01-30 21:00:00', 0, 1, 'Canal+'),
+(21, 'HER', 'BAR', '2011-01-29 20:00:00', 0, 3, 'Gol T / C+ Liga'),
+(21, 'LEV', 'GET', '2011-01-29 18:00:00', 2, 0, 'Taquilla 7'),
+(21, 'MAL', 'SAR', '2011-01-29 18:00:00', 1, 2, 'Taquilla 6'),
+(21, 'MLL', 'SPO', '2011-01-29 18:00:00', 0, 4, 'Taquilla 5'),
+(21, 'OSA', 'MAD', '2011-01-30 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(21, 'RAC', 'VAL', '2011-01-31 21:00:00', 1, 1, 'Gol T / Taquilla 8'),
+(21, 'RSO', 'ALM', '2011-01-29 18:00:00', 2, 0, 'Taquilla 8'),
+(22, 'ALM', 'ESP', '2011-02-05 18:00:00', 3, 2, 'Taquilla 6'),
+(22, 'ATH', 'SPO', '2011-02-05 18:00:00', 3, 0, 'Gol T / C+ Liga'),
+(22, 'BAR', 'ATM', '2011-02-05 22:00:00', 3, 0, 'laSexta / TV3 / TM / TPA7 / IB3'),
+(22, 'GET', 'DEP', '2011-02-05 18:00:00', 4, 1, 'Taquilla 5'),
+(22, 'MAD', 'RSO', '2011-02-06 19:00:00', 4, 1, 'Gol T / C+ Liga'),
+(22, 'OSA', 'MLL', '2011-02-05 18:00:00', 1, 1, 'Taquilla 7'),
+(22, 'SAR', 'RAC', '2011-02-05 18:00:00', 1, 1, 'Taquilla 4'),
+(22, 'SEV', 'MAL', '2011-02-06 17:00:00', 0, 0, 'Gol T / C+ Liga'),
+(22, 'VAL', 'HER', '2011-02-06 21:00:00', 2, 0, 'Canal+'),
+(22, 'VIL', 'LEV', '2011-02-05 20:00:00', 0, 1, 'Gol T / Taquilla 8'),
+(23, 'ATM', 'VAL', '2011-02-12 18:00:00', 1, 2, 'Gol T / C+ Liga'),
+(23, 'DEP', 'VIL', '2011-02-13 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(23, 'ESP', 'MAD', '2011-02-13 21:00:00', 0, 1, 'Canal+'),
+(23, 'HER', 'SAR', '2011-02-13 17:00:00', 2, 1, 'Taquilla 5'),
+(23, 'LEV', 'ALM', '2011-02-13 17:00:00', 1, 0, 'Taquilla 7'),
+(23, 'MAL', 'GET', '2011-02-13 17:00:00', 2, 2, 'Taquilla 6'),
+(23, 'MLL', 'ATH', '2011-02-14 21:00:00', 1, 0, 'Gol T / Taquilla 8'),
+(23, 'RAC', 'SEV', '2011-02-12 22:00:00', 3, 2, 'laSexta / TPA7 / TM / IB3 / TV3'),
+(23, 'RSO', 'OSA', '2011-02-13 17:00:00', 1, 0, 'Taquilla 8'),
+(23, 'SPO', 'BAR', '2011-02-12 20:00:00', 1, 1, 'Gol T / C+ Liga'),
+(24, 'ALM', 'DEP', '2011-02-20 17:00:00', 1, 1, 'Taquilla 7'),
+(24, 'BAR', 'ATH', '2011-02-20 21:00:00', 2, 1, 'Canal+'),
+(24, 'GET', 'RAC', '2011-02-20 17:00:00', 0, 1, 'Taquilla 5'),
+(24, 'MAD', 'LEV', '2011-02-19 20:00:00', 2, 0, 'Gol T / C+ Liga'),
+(24, 'OSA', 'ESP', '2011-02-20 17:00:00', 4, 0, 'Taquilla 8'),
+(24, 'RSO', 'MLL', '2011-02-21 21:00:00', 1, 0, 'Gol T / Taquilla 8'),
+(24, 'SAR', 'ATM', '2011-02-19 22:00:00', 0, 1, 'laSexta / TM / TV3 / TPA7 / IB3'),
+(24, 'SEV', 'HER', '2011-02-20 19:00:00', 1, 0, 'Gol T / C+ Liga'),
+(24, 'VAL', 'SPO', '2011-02-19 18:00:00', 0, 0, 'Gol T / C+ Liga'),
+(24, 'VIL', 'MAL', '2011-02-20 17:00:00', 1, 1, 'Taquilla 6'),
+(25, 'ATH', 'VAL', '2011-02-27 21:00:00', 1, 2, 'Canal+'),
+(25, 'ATM', 'SEV', '2011-02-26 18:00:00', 2, 2, 'Gol T / C+ Liga'),
+(25, 'DEP', 'MAD', '2011-02-26 22:00:00', 0, 0, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(25, 'ESP', 'RSO', '2011-02-26 18:00:00', 4, 1, 'Taquilla 8'),
+(25, 'HER', 'GET', '2011-02-27 17:00:00', 0, 0, 'Taquilla 7'),
+(25, 'LEV', 'OSA', '2011-02-27 17:00:00', 2, 1, 'Taquilla 8'),
+(25, 'MAL', 'ALM', '2011-02-28 21:00:00', 3, 1, 'Gol T / Taquilla 8'),
+(25, 'MLL', 'BAR', '2011-02-26 20:00:00', 0, 3, 'Gol T / C+ Liga'),
+(25, 'RAC', 'VIL', '2011-02-27 19:00:00', 2, 2, 'Gol T / C+ Liga'),
+(25, 'SPO', 'SAR', '2011-02-26 18:00:00', 0, 0, 'Taquilla 7'),
+(26, 'ALM', 'RAC', '2011-03-03 20:00:00', 1, 1, 'Taquilla 8'),
+(26, 'ESP', 'MLL', '2011-03-01 20:00:00', 1, 2, 'Gol T / Taquilla 8'),
+(26, 'GET', 'ATM', '2011-03-02 20:00:00', 1, 1, 'Canal+'),
+(26, 'MAD', 'MAL', '2011-03-03 22:00:00', 7, 0, 'Gol T / C+ Liga'),
+(26, 'OSA', 'DEP', '2011-03-02 20:00:00', 0, 0, 'Taquilla 7'),
+(26, 'RSO', 'LEV', '2011-03-02 20:00:00', 1, 1, 'Taquilla 8'),
+(26, 'SAR', 'ATH', '2011-03-02 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(26, 'SEV', 'SPO', '2011-03-01 22:00:00', 3, 0, 'Gol T / C+ Liga'),
+(26, 'VAL', 'BAR', '2011-03-02 22:00:00', 0, 1, 'laSexta / TV3 / IB3 / TM / TPA7'),
+(26, 'VIL', 'HER', '2011-03-02 20:00:00', 1, 0, 'Taquilla 6'),
+(27, 'ATH', 'SEV', '2011-03-06 19:00:00', 2, 0, 'Gol T / C+ Liga'),
+(27, 'ATM', 'VIL', '2011-03-05 22:00:00', 3, 1, 'laSexta / TM / TV3 / IB3 / TPA7'),
+(27, 'BAR', 'SAR', '2011-03-05 20:00:00', 1, 0, 'Gol T / C+ Liga'),
+(27, 'DEP', 'RSO', '2011-03-07 21:00:00', 2, 1, 'Gol T / Taquilla 8'),
+(27, 'HER', 'ALM', '2011-03-06 17:00:00', 1, 2, 'Taquilla 6'),
+(27, 'LEV', 'ESP', '2011-03-06 17:00:00', 1, 0, 'Taquilla 8'),
+(27, 'MAL', 'OSA', '2011-03-06 17:00:00', 0, 1, 'Taquilla 7'),
+(27, 'MLL', 'VAL', '2011-03-05 18:00:00', 1, 2, 'Gol T / C+ Liga'),
+(27, 'RAC', 'MAD', '2011-03-06 21:00:00', 1, 3, 'Canal+'),
+(27, 'SPO', 'GET', '2011-03-06 17:00:00', 2, 0, 'Taquilla 5'),
+(28, 'ALM', 'ATM', '2011-03-12 18:00:00', 2, 2, 'Gol T / C+ Liga'),
+(28, 'ESP', 'DEP', '2011-03-13 17:00:00', 2, 0, 'Taquilla 7'),
+(28, 'GET', 'ATH', '2011-03-14 21:00:00', 2, 2, 'Gol T / Taquilla 8'),
+(28, 'LEV', 'MLL', '2011-03-13 17:00:00', 1, 1, 'Taquilla 8'),
+(28, 'MAD', 'HER', '2011-03-12 20:00:00', 2, 0, 'Gol T / C+ Liga'),
+(28, 'OSA', 'RAC', '2011-03-13 17:00:00', 3, 1, 'Taquilla 5'),
+(28, 'RSO', 'MAL', '2011-03-13 17:00:00', 0, 2, 'Taquilla 6'),
+(28, 'SAR', 'VAL', '2011-03-12 22:00:00', 4, 0, 'laSexta / TV3 / IB3 / TM / TPA7'),
+(28, 'SEV', 'BAR', '2011-03-13 21:00:00', 1, 1, 'Canal+'),
+(28, 'VIL', 'SPO', '2011-03-13 19:00:00', 1, 1, 'Gol T / C+ Liga'),
+(29, 'ATH', 'VIL', '2011-03-20 19:00:00', 0, 1, 'Gol T / C+ Liga'),
+(29, 'ATM', 'MAD', '2011-03-19 22:00:00', 1, 2, 'laSexta / TM / TPA7 / TV3 / IB3'),
+(29, 'BAR', 'GET', '2011-03-19 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(29, 'DEP', 'LEV', '2011-03-20 17:00:00', 0, 1, 'Taquilla 8'),
+(29, 'HER', 'OSA', '2011-03-20 17:00:00', 0, 4, 'Taquilla 5'),
+(29, 'MAL', 'ESP', '2011-03-20 17:00:00', 2, 0, 'Taquilla 7'),
+(29, 'MLL', 'SAR', '2011-03-19 18:00:00', 1, 0, 'Gol T / C+ Liga'),
+(29, 'RAC', 'RSO', '2011-03-20 17:00:00', 2, 1, 'Gol T / Taquilla 6'),
+(29, 'SPO', 'ALM', '2011-03-20 17:00:00', 1, 0, 'Taquilla 4'),
+(29, 'VAL', 'SEV', '2011-03-20 21:00:00', 0, 1, 'Canal+'),
+(30, 'ALM', 'ATH', '2011-04-04 21:00:00', 1, 3, 'Gol T / Taquilla 8'),
+(30, 'DEP', 'MLL', '2011-04-03 17:00:00', 2, 1, 'Taquilla 8'),
+(30, 'ESP', 'RAC', '2011-04-03 17:00:00', 1, 2, 'Taquilla 6'),
+(30, 'GET', 'VAL', '2011-04-02 20:00:00', 2, 4, 'Gol T / C+ Liga'),
+(30, 'LEV', 'MAL', '2011-04-03 17:00:00', 3, 1, 'Taquilla 7'),
+(30, 'MAD', 'SPO', '2011-04-02 18:00:00', 0, 1, 'Gol T / C+ Liga'),
+(30, 'OSA', 'ATM', '2011-04-03 21:00:00', 2, 3, 'Canal+'),
+(30, 'RSO', 'HER', '2011-04-03 17:00:00', 1, 3, 'Taquilla 5'),
+(30, 'SEV', 'SAR', '2011-04-03 19:00:00', 3, 1, 'Gol T / C+ Liga'),
+(30, 'VIL', 'BAR', '2011-04-02 22:00:00', 0, 1, 'laSexta / TV3 / IB3 / TM / TPA7'),
+(31, 'ATH', 'MAD', '2011-04-09 18:00:00', 0, 3, 'Gol T / C+ Liga'),
+(31, 'ATM', 'RSO', '2011-04-10 19:00:00', 3, 0, 'Gol T / C+ Liga'),
+(31, 'BAR', 'ALM', '2011-04-09 20:00:00', 3, 1, 'Gol T / C+ Liga'),
+(31, 'HER', 'ESP', '2011-04-10 17:00:00', 0, 0, 'Taquilla 6'),
+(31, 'MAL', 'DEP', '2011-04-10 17:00:00', 0, 0, 'Taquilla 8'),
+(31, 'MLL', 'SEV', '2011-04-09 22:00:00', 2, 2, 'laSexta / IB3 / TM / TV3 / TPA7'),
+(31, 'RAC', 'LEV', '2011-04-10 17:00:00', 1, 1, 'Taquilla 7'),
+(31, 'SAR', 'GET', '2011-04-11 21:00:00', 2, 1, 'Gol T / Taquilla 8'),
+(31, 'SPO', 'OSA', '2011-04-10 17:00:00', 1, 0, 'Taquilla 5'),
+(31, 'VAL', 'VIL', '2011-04-10 21:00:00', 5, 0, 'Canal+'),
+(32, 'ALM', 'VAL', '2011-04-16 20:00:00', 0, 3, 'Gol T / C+ Liga'),
+(32, 'DEP', 'RAC', '2011-04-17 17:00:00', 2, 0, 'Taquilla 8'),
+(32, 'ESP', 'ATM', '2011-04-17 21:00:00', 2, 2, 'Canal+'),
+(32, 'GET', 'SEV', '2011-04-16 18:00:00', 1, 0, 'Gol T / C+ Liga'),
+(32, 'LEV', 'HER', '2011-04-17 17:00:00', 2, 1, 'Taquilla 7'),
+(32, 'MAD', 'BAR', '2011-04-16 22:00:00', 1, 1, 'laSexta / TM / TV3 / TPA7 / IB3'),
+(32, 'MAL', 'MLL', '2011-04-16 18:00:00', 3, 0, 'Taquilla 8'),
+(32, 'OSA', 'ATH', '2011-04-17 19:00:00', 1, 2, 'Gol T / C+ Liga'),
+(32, 'RSO', 'SPO', '2011-04-17 17:00:00', 2, 1, 'Taquilla 6'),
+(32, 'VIL', 'SAR', '2011-04-18 21:00:00', 1, 0, 'Gol T / Taquilla 8'),
+(33, 'ATH', 'RSO', '2011-04-23 22:00:00', 2, 1, 'laSexta / TM / TV3 / TPA7 / IB3'),
+(33, 'ATM', 'LEV', '2011-04-24 19:00:00', 4, 1, 'Gol T / C+ Liga'),
+(33, 'BAR', 'OSA', '2011-04-23 20:00:00', 2, 0, 'Gol T / C+ Liga'),
+(33, 'HER', 'DEP', '2011-04-24 17:00:00', 1, 0, 'Taquilla 7'),
+(33, 'MLL', 'GET', '2011-04-24 17:00:00', 2, 0, 'Taquilla 5'),
+(33, 'RAC', 'MAL', '2011-04-24 17:00:00', 1, 2, 'Taquilla 8'),
+(33, 'SAR', 'ALM', '2011-04-25 21:00:00', 1, 0, 'Gol T / Taquilla 8'),
+(33, 'SEV', 'VIL', '2011-04-24 21:00:00', 3, 2, 'Canal+'),
+(33, 'SPO', 'ESP', '2011-04-24 17:00:00', 1, 0, 'Taquilla 6'),
+(33, 'VAL', 'MAD', '2011-04-23 18:00:00', 3, 6, 'Gol T / C+ Liga'),
+(34, 'ALM', 'SEV', '2011-05-01 17:00:00', 0, 1, 'Taquilla 5'),
+(34, 'DEP', 'ATM', '2011-04-30 22:00:00', 0, 1, 'laSexta / TM / TV3 / TPA7 / IB3'),
+(34, 'ESP', 'ATH', '2011-05-02 21:00:00', 2, 1, 'Gol T / Taquilla 8'),
+(34, 'LEV', 'SPO', '2011-05-01 17:00:00', 0, 0, 'Taquilla 6'),
+(34, 'MAD', 'SAR', '2011-04-30 18:00:00', 2, 3, 'Gol T / C+ Liga'),
+(34, 'MAL', 'HER', '2011-05-01 17:00:00', 3, 1, 'Taquilla 7'),
+(34, 'OSA', 'VAL', '2011-05-01 21:00:00', 1, 0, 'Canal+'),
+(34, 'RAC', 'MLL', '2011-05-01 17:00:00', 2, 0, 'Taquilla 8'),
+(34, 'RSO', 'BAR', '2011-04-30 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(34, 'VIL', 'GET', '2011-05-01 19:00:00', 2, 1, 'Gol T / C+ Liga'),
+(35, 'ATH', 'LEV', '2011-05-07 18:00:00', 3, 2, 'Taquilla 6'),
+(35, 'ATM', 'MAL', '2011-05-07 20:00:00', 0, 3, 'Gol T / C+ Liga'),
+(35, 'BAR', 'ESP', '2011-05-08 19:00:00', 2, 0, 'Gol T / C+ Liga'),
+(35, 'GET', 'ALM', '2011-05-07 18:00:00', 2, 0, 'Taquilla 5'),
+(35, 'HER', 'RAC', '2011-05-07 18:00:00', 2, 3, 'Taquilla 8'),
+(35, 'MLL', 'VIL', '2011-05-08 12:00:00', 0, 0, 'Gol T / Taquilla 8'),
+(35, 'SAR', 'OSA', '2011-05-08 21:00:00', 1, 3, 'Canal+'),
+(35, 'SEV', 'MAD', '2011-05-07 22:00:00', 2, 6, 'laSexta / TM / TPA7 / IB3 / TV3'),
+(35, 'SPO', 'DEP', '2011-05-07 18:00:00', 2, 2, 'Taquilla 7'),
+(35, 'VAL', 'RSO', '2011-05-07 18:00:00', 3, 0, 'Gol T / C+ Liga'),
+(36, 'ALM', 'VIL', '2011-05-11 20:00:00', 0, 0, 'Taquilla 6'),
+(36, 'DEP', 'ATH', '2011-05-10 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(36, 'ESP', 'VAL', '2011-05-11 21:00:00', 2, 2, 'Taquilla 7'),
+(36, 'HER', 'MLL', '2011-05-11 21:00:00', 2, 2, 'Taquilla 8'),
+(36, 'LEV', 'BAR', '2011-05-11 20:00:00', 1, 1, 'Canal+'),
+(36, 'MAD', 'GET', '2011-05-10 22:00:00', 4, 0, 'Gol T / C+ Liga'),
+(36, 'MAL', 'SPO', '2011-05-10 21:00:00', 2, 0, 'Taquilla 7'),
+(36, 'OSA', 'SEV', '2011-05-11 22:00:00', 3, 2, 'laSexta / TM / TPA7 / IB3'),
+(36, 'RAC', 'ATM', '2011-05-10 21:00:00', 2, 1, 'Taquilla 8'),
+(36, 'RSO', 'SAR', '2011-05-11 20:00:00', 2, 1, 'Gol T / C+ Liga'),
+(37, 'ALM', 'MLL', '2011-05-15 21:00:00', 3, 1, 'Taquilla 4'),
+(37, 'ATH', 'MAL', '2011-05-15 21:00:00', 1, 1, 'Taquilla 5'),
+(37, 'ATM', 'HER', '2011-05-15 21:00:00', 2, 1, 'Multideporte 7'),
+(37, 'BAR', 'DEP', '2011-05-15 21:00:00', 0, 0, 'Canal+'),
+(37, 'GET', 'OSA', '2011-05-15 21:00:00', 2, 0, 'laSexta / TM / TPA7 / Esport3'),
+(37, 'SAR', 'ESP', '2011-05-15 21:00:00', 1, 0, 'Taquilla 7'),
+(37, 'SEV', 'RSO', '2011-05-15 21:00:00', 3, 1, 'Taquilla 6'),
+(37, 'SPO', 'RAC', '2011-05-15 21:00:00', 2, 1, 'Taquilla 8'),
+(37, 'VAL', 'LEV', '2011-05-15 21:00:00', 0, 0, 'Multideporte 5'),
+(37, 'VIL', 'MAD', '2011-05-15 21:00:00', 1, 3, 'Gol T / C+ Liga'),
+(38, 'DEP', 'VAL', '2011-05-21 22:00:00', 0, 2, 'Gol T / C+ Liga'),
+(38, 'ESP', 'SEV', '2011-05-21 22:00:00', 2, 3, 'Taquilla 5'),
+(38, 'HER', 'SPO', '2011-05-21 20:00:00', 0, 0, 'Gol T / C+ Liga'),
+(38, 'LEV', 'SAR', '2011-05-21 22:00:00', 1, 2, 'Taquilla 6'),
+(38, 'MAD', 'ALM', '2011-05-21 20:00:00', 8, 1, 'Canal+'),
+(38, 'MAL', 'BAR', '2011-05-21 18:00:00', 1, 3, 'Gol T / C+ Liga'),
+(38, 'MLL', 'ATM', '2011-05-21 22:00:00', 3, 4, 'Taquilla 7'),
+(38, 'OSA', 'VIL', '2011-05-21 22:00:00', 1, 0, 'Taquilla 4'),
+(38, 'RAC', 'ATH', '2011-05-21 22:00:00', 1, 2, 'Taquilla 8'),
+(38, 'RSO', 'GET', '2011-05-21 22:00:00', 1, 1, 'laSexta / TM / TPA7 / IB3 / TV3');
+
+--
+-- Disparadores `partits`
+--
+DELIMITER $$
+CREATE TRIGGER `tr_class_up` BEFORE UPDATE ON `partits` FOR EACH ROW BEGIN
+	update class set t_punts = t_punts + fc_punts(new.g_local,new.g_vis,"L") where cod = new.`e_local`;  
+	update class set t_punts = t_punts + fc_punts(new.g_local,new.g_vis,"V") where cod = new.`e_vis`;  
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `tr_punts_in` BEFORE INSERT ON `partits` FOR EACH ROW BEGIN
+declare var_gua,var_emp,var_per tinyint default 0;
+if new.g_local is not NULL then
+BEGIN
+if (new.g_local>new.g_vis) then set var_gua =1; end if;
+if (new.g_local=new.g_vis) then set var_emp =1; end if;
+if (new.g_local<new.g_vis) then set var_per =1; end if;
+	update class set t_punts = t_punts + fc_punts(new.g_local,new.g_vis,"L"), 
+	t_jug = t_jug + 1, t_gua = t_gua + var_gua, t_emp = t_emp + var_emp, t_per = t_per + var_per, t_fav = t_fav + new.g_local, t_con = t_con + new.g_vis,
+	c_jug = c_jug + 1, c_gua = c_gua + var_gua, c_emp = c_emp + var_emp, c_per = c_per + var_per, c_fav = c_fav + new.g_local, c_con = c_con + new.g_vis
+	where cod = new.`e_local`;  
+if (new.g_local>new.g_vis) then set var_gua =1; else set var_gua =0; end if;
+if (new.g_local=new.g_vis) then set var_emp =1; else set var_emp =0; end if;
+if (new.g_local<new.g_vis) then set var_per =1; else set var_per =0; end if;
+	update class set t_punts = t_punts + fc_punts(new.g_local,new.g_vis,"V"), 
+	t_jug = t_jug + 1, t_gua = t_gua + var_gua, t_emp = t_emp + var_emp, t_per = t_per + var_per, t_fav = t_fav + new.g_local, t_con = t_con + new.g_vis,
+	f_jug = f_jug + 1, f_gua = f_gua + var_gua, f_emp = f_emp + var_emp, f_per = f_per + var_per, f_fav = f_fav + new.g_local, f_con = f_con + new.g_vis	
+	where cod = new.`e_vis`;  
+END;
+END IF;
+END
+$$
+DELIMITER ;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `class`
+--
+ALTER TABLE `class`
+  ADD PRIMARY KEY (`cod`);
+
+--
+-- Indices de la tabla `equips`
+--
+ALTER TABLE `equips`
+  ADD PRIMARY KEY (`cod`);
+
+--
+-- Indices de la tabla `jornades`
+--
+ALTER TABLE `jornades`
+  ADD PRIMARY KEY (`num`);
+
+--
+-- Indices de la tabla `partits`
+--
+ALTER TABLE `partits`
+  ADD PRIMARY KEY (`j_num`,`e_local`,`e_vis`),
+  ADD KEY `FK_partits_equips` (`e_local`),
+  ADD KEY `FK_partits_equips_2` (`e_vis`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `jornades`
+--
+ALTER TABLE `jornades`
+  MODIFY `num` tinyint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `class`
+--
+ALTER TABLE `class`
+  ADD CONSTRAINT `FK_class_equips` FOREIGN KEY (`cod`) REFERENCES `equips` (`cod`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `partits`
+--
+ALTER TABLE `partits`
+  ADD CONSTRAINT `FK_partits_equips` FOREIGN KEY (`e_local`) REFERENCES `equips` (`cod`),
+  ADD CONSTRAINT `FK_partits_equips_2` FOREIGN KEY (`e_vis`) REFERENCES `equips` (`cod`),
+  ADD CONSTRAINT `FK_partits_jornades` FOREIGN KEY (`j_num`) REFERENCES `jornades` (`num`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
